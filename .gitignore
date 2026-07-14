@@ -1,0 +1,38 @@
+# Dependencies and package-manager caches
+/node_modules/
+/.sites-runtime/
+/.npm/
+
+# Framework and build output
+/.next/
+/.vinext/
+/.wrangler/
+/dist/
+/out/
+/coverage/
+*.tsbuildinfo
+
+# Local configuration and credentials
+.env*
+!.env.example
+*.pem
+*.key
+
+# Logs and operating-system files
+*.log
+.DS_Store
+Thumbs.db
+
+# Private/internal source material must never enter the public repository
+/.claude/
+/FINAL_PASS_INPUT/
+/work/
+/outputs/
+
+# Deployment and release artifacts are produced outside this repository
+/deploy/
+*.zip
+*.tar.gz
+site-release.sha256
+CHECKSUMS.sha256
+
