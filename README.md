@@ -1,6 +1,6 @@
 # Kori Stroud — Operations Automation Portfolio
 
-Source for [Kori Stroud's operations automation portfolio](https://kori.tradeopsdata.com), including three project case studies and a focused services path. The site is static, tracker-free, keyboard-friendly, responsive, and built around truthful evidence from synthetic or sanitized project demonstrations.
+Source for [Kori Stroud's operations automation portfolio](https://kori.tradeopsdata.com), including three project case studies and a focused services path. The site is statically hosted, keyboard-friendly, responsive, and built around truthful evidence from synthetic or sanitized project demonstrations. An optional chat widget loads only after a visitor clicks it.
 
 ## 1. What problem it solves
 
@@ -37,7 +37,7 @@ The public routes use one shared visual system while each project and service ha
 - Plain CSS with shared tokens, responsive breakpoints, visible focus states, and reduced-motion handling
 - Sharp-based deterministic 1200×630 social-card generation using reviewed local project imagery
 
-The deployed site is static. It has no application database, authentication, analytics, advertising pixels, contact form, or visitor-tracking service. Client JavaScript is limited to presentation interactions such as menu state, replay controls, image viewing, and copying the public email address.
+The deployed site is static and has no application database, authentication, first-party analytics, advertising pixels, or first-party contact form. It includes an optional click-to-load tawk.to chat integration that processes information only when a visitor opens the chat. See /privacy/ for details.
 
 ## 6. How to run it
 
@@ -74,9 +74,9 @@ node scripts/static-preview.mjs
 ## 8. Privacy and safety boundaries
 
 - Public screenshots use invented or sanitized records.
-- No visitor input is collected or stored.
+- The portfolio does not collect visitor messages through a first-party form. Optional chats are handled by tawk.to after the visitor opts to open the widget.
 - Contact buttons open a pre-addressed email draft; nothing sends automatically.
-- No analytics, tracking, advertising pixels, authentication, or hidden submission endpoint is present.
+- No first-party analytics, advertising pixels, authentication, or hidden submission endpoint is present. The optional tawk.to service may collect technical data, conversation content, and cookies after activation.
 - The full TradeOps operational repository and its private data are not part of this repository.
 - ATS Copilot never submits applications, and CRM Rescue requires explicit duplicate decisions.
 

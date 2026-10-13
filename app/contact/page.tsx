@@ -6,7 +6,7 @@ import { emailHref, site } from "../site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Kori Stroud about a workflow you want automated, or about a contract or full-time role. Email only — no forms, no tracking.",
+    "Contact Kori Stroud about Python automation, projects, or roles by email or optional live chat.",
   alternates: { canonical: "/contact/" },
 };
 
@@ -37,9 +37,9 @@ export default function ContactPage() {
           <nav className="route-trail" aria-label="Breadcrumb"><Link href="/">Home</Link><span aria-hidden="true">/</span><strong>Contact</strong></nav>
           <div className="page-hero-inner">
             <p className="eyebrow">Contact</p>
-            <h1>A short email is enough to start</h1>
+            <h1>A short message is enough to start</h1>
             <p className="lede">
-              No form, no call booking, no follow-up sequence. Email me directly and I&apos;ll reply the same way — whether it&apos;s a workflow you want fixed or a role you&apos;re hiring for.
+              Email me directly or select Chat with Kori in the corner to start a conversation. Whether it&apos;s a workflow you want fixed or a role you&apos;re hiring for, I respond personally.
             </p>
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function ContactPage() {
         </aside>
 
         <p className="privacy-note">
-          This site has no contact form, analytics, advertising pixels, or visitor tracking. The buttons above only open a draft in your own mail application — nothing is sent or recorded by this site.
+          Email buttons open a draft in your email application; nothing sends automatically. Live chat is optional and loads tawk.to only when you click Chat with Kori. Chat messages and technical data are handled by that third-party service. Read the <Link href="/privacy/">privacy information</Link>.
         </p>
       </section>
     </main>

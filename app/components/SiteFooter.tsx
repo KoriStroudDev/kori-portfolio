@@ -21,6 +21,7 @@ export function SiteFooter() {
           <Link href="/services/">Services</Link>
           <Link href="/about/">About</Link>
           <Link href="/contact/">Contact</Link>
+          <Link href="/privacy/">Privacy</Link>
         </nav>
         <nav aria-label="Contact and profiles">
           <p className="footer-heading">Reach me</p>
@@ -29,7 +30,7 @@ export function SiteFooter() {
           <a href={site.linkedin} rel="me noreferrer" target="_blank">LinkedIn</a>
         </nav>
         <p className="footer-note">
-          © 2026 {site.name}. This is a static site with no analytics, tracking, or contact form — email is the only channel, and nothing here collects visitor data.
+          © 2026 {site.name}. This portfolio has no first-party analytics or contact form. Optional live chat loads tawk.to only after you open it. See <Link href="/privacy/">privacy information</Link>.
         </p>
       </div>
     </footer>

@@ -38,7 +38,8 @@ const routes = [
   ["/", "home", "Python automation for"],
   ["/services/", "services", "Automation help for teams drowning in manual steps"],
   ["/about/", "about", "I did the operational work before I started automating it"],
-  ["/contact/", "contact", "A short email is enough to start"],
+  ["/contact/", "contact", "A short message is enough to start"],
+  ["/privacy/", "privacy", "Privacy and optional live chat"],
   ["/projects/tradeops/", "project-tradeops", "Scattered bid pages become one reviewable report"],
   ["/projects/ats-copilot/", "project-ats-copilot", "Application help that reads the right tab and never hits Submit"],
   ["/projects/crm-rescue/", "project-crm-rescue", "CRM cleanup where every change can be explained"],
@@ -276,7 +277,7 @@ test("contact page offers both intents, copy email, and a labeled mail action", 
   assert.match(html, /kori@tradeopsdata\.com/);
   assert.match(html, /https:\/\/github\.com\/KoriStroudDev/);
   assert.match(html, /https:\/\/www\.linkedin\.com\/in\/koristroud\//);
-  assert.match(html, /no contact form, analytics, advertising pixels, or visitor tracking/i);
+  assert.match(html, /Live chat is optional and loads tawk.to only when you click Chat with Kori/i);
   assert.match(html, /Nothing sends until you hit send/i);
 });
 
@@ -536,4 +537,19 @@ test("contact page lets recruiters request a résumé", async () => {
   const html = await response.text();
   assert.match(html, /Recruiter or hiring manager\?/);
   assert.match(html, /Request résumé/);
+});
+
+// Optional live chat is visible on every route, but the third-party widget
+// is deliberately NOT embedded or loaded by the static HTML before interaction.
+test("site exposes click-to-load live chat with an email fallback and privacy page", async () => {
+  for (const route of ["/", "/contact/", "/privacy/"]) {
+    const html = await (await render(route)).text();
+    assert.match(html, /Chat with Kori/);
+    assert.match(html, /Opens third-party chat on click/);
+    assert.ok(!html.includes('src="https://embed.tawk.to/'), "Chat script must not load before click");
+  }
+  const privacy = await (await render("/privacy/")).text();
+  assert.match(privacy, /data-route=["']privacy["']/);
+  assert.match(privacy, /tawk.to privacy policy/);
+  assert.match(privacy, /kori@tradeopsdata.com/);
 });

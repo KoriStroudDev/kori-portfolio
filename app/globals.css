@@ -1251,3 +1251,50 @@ li[data-state="shown"][data-tone="human"] .demo-mark { color: var(--blue); }
   .resume-request .button { width: 100%; }
   .closing-copy { max-width: 100%; }
 }
+
+/* Kori portfolio optional live chat launcher: 2026-10 */
+.tawk-launcher {
+  position: fixed;
+  z-index: 80;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  max-width: min(92vw, 300px);
+}
+.tawk-launcher-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 50px;
+  padding: 0.65rem 1rem;
+  border: 1px solid #6bffac;
+  border-radius: 999px;
+  background: #173f32;
+  color: #f5fff9;
+  box-shadow: 0 10px 36px rgba(0,0,0,0.4);
+  font: 800 0.875rem/1.2 var(--sans);
+  cursor: pointer;
+}
+.tawk-launcher-button:hover { background: #235c46; }
+.tawk-launcher-button:disabled { opacity: 0.85; cursor: progress; }
+.tawk-launcher-icon { font-size: 1.1rem; color: #d9ff70; }
+.tawk-launcher-note {
+  max-width: 300px;
+  margin: 0;
+  padding: 0.25rem 0.55rem;
+  border-radius: 4px;
+  background: rgba(7, 11, 18, 0.94);
+  color: #c8d9ce;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  text-align: right;
+}
+.tawk-launcher-note a { color: #d9ff70; }
+@media (max-width: 640px) {
+  .tawk-launcher { right: 12px; bottom: max(12px, env(safe-area-inset-bottom)); }
+  .tawk-launcher-note { max-width: 245px; }
+}
