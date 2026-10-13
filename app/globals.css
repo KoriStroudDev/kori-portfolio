@@ -1183,3 +1183,71 @@ li[data-state="shown"][data-tone="human"] .demo-mark { color: var(--blue); }
   .tradeops-flow *, .ats-demo *, .pipeline-board *, .workflow-demo * { transition: none !important; animation: none !important; }
   .demo-summary { opacity: 1; transform: none; }
 }
+
+/* TradeOps portfolio contact/clarity enhancement: 2026-10 */
+.hero-personal {
+  margin: 0 0 1rem;
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.015em;
+}
+.hero-quicklinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem 1.6rem;
+  margin-top: 1.25rem;
+}
+.hero-quicklinks a {
+  color: var(--acid);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+}
+.hero-quicklinks a:hover { text-decoration: underline; }
+.project-detail-disclosure {
+  width: 100%;
+  margin: 1.15rem 0 1.65rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line-soft);
+  background: rgba(11, 32, 24, 0.24);
+  color: var(--ink-soft);
+  font-size: var(--text-sm);
+}
+.project-detail-disclosure summary {
+  color: var(--acid);
+  font-weight: 800;
+  cursor: pointer;
+}
+.project-detail-disclosure summary:focus-visible { outline-offset: 5px; }
+.project-detail-disclosure p { margin: 0.8rem 0 0; line-height: 1.6; }
+.project-card-copy .project-detail-disclosure + .text-link { margin-top: auto; }
+.resume-request {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem;
+  margin: 1.25rem 0 2.5rem;
+  border: 1px solid #355b47;
+  background: rgba(11, 32, 24, 0.33);
+}
+.resume-request strong { color: var(--ink); }
+.resume-request p { color: var(--ink-soft); margin: 0.25rem 0 0; }
+.closing-copy { max-width: 360px; }
+.closing-copy > p { text-align: right; color: var(--ink-soft); font-size: var(--text-sm); margin: 0 0 0.5rem; }
+.closing-copy .copy-email { justify-content: flex-end; }
+.closing-copy .copy-email-address { font-size: var(--text-sm); }
+.closing-copy .copy-email-status { text-align: right; }
+@media (max-width: 900px) {
+  .closing-copy > p, .closing-copy .copy-email-status { text-align: left; }
+  .closing-copy .copy-email { justify-content: flex-start; }
+}
+@media (max-width: 640px) {
+  .hero-quicklinks { align-items: flex-start; flex-direction: column; }
+  .resume-request .button { width: 100%; }
+  .closing-copy { max-width: 100%; }
+}

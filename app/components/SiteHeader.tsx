@@ -79,7 +79,7 @@ export function SiteHeader() {
                   aria-current={isActive(pathname, "/contact") ? "page" : undefined}
                   onClick={() => setMenuOpen(false)}
                 >
-                  Hire me
+                  Contact
                 </Link>
               </li>
             </ul>

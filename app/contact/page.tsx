@@ -68,6 +68,14 @@ export default function ContactPage() {
           </article>
         </div>
 
+        <div className="resume-request">
+          <div>
+            <strong>Recruiter or hiring manager?</strong>
+            <p>Ask for my current résumé. I&apos;ll send the relevant version directly.</p>
+          </div>
+          <a className="button button-secondary" href={emailHref("Résumé request for Kori Stroud")}>Request résumé <span aria-hidden="true">→</span></a>
+        </div>
+
         <aside className="email-panel" aria-labelledby="email-panel-heading">
           <div>
             <p className="eyebrow" id="email-panel-heading">Prefer your own email client or webmail?</p>

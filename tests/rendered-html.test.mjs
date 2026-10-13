@@ -35,7 +35,7 @@ async function render(pathname = "/") {
  * marker and a unique H1 so that "wrong page with HTTP 200" can never pass.
  */
 const routes = [
-  ["/", "home", "Turn operational drag into"],
+  ["/", "home", "Python automation for"],
   ["/services/", "services", "Automation help for teams drowning in manual steps"],
   ["/about/", "about", "I did the operational work before I started automating it"],
   ["/contact/", "contact", "A short email is enough to start"],
@@ -518,4 +518,22 @@ test("exported assets contain no private runtime data", async () => {
       assert.doesNotMatch(content, pattern, `private data ${pattern} in ${file}`);
     }
   }
+});
+
+test("homepage offers recruiter and business paths after refresh", async () => {
+  const response = await render("/");
+  const html = await response.text();
+  assert.match(html, /Recruiter\? Request my résumé/);
+  assert.match(html, /Business owner\? Start with a small fix/);
+  assert.match(html, /mailto:kori@tradeopsdata\.com\?subject=R/);
+  assert.match(html, /Copy email/);
+  assert.match(html, /Python automation for/);
+  assert.match(html, /kori@tradeopsdata\.com/);
+});
+
+test("contact page lets recruiters request a résumé", async () => {
+  const response = await render("/contact/");
+  const html = await response.text();
+  assert.match(html, /Recruiter or hiring manager\?/);
+  assert.match(html, /Request résumé/);
 });
